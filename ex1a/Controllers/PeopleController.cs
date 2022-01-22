@@ -224,7 +224,7 @@ namespace ex1a.Controllers
                     }
                 }
             }
-            ViewData["InstructorID"] = new SelectList(_context.Instructors, "ID", "FullName", people.InstructorID);
+            ViewData["PersonID"] = new SelectList(_context.People, "ID", "FullName", people.PersonId);
             return View(people);
         }
 

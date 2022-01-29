@@ -88,7 +88,9 @@ namespace ex1a.Controllers
                 return NotFound();
             }
 
-            var people = await _context.People.SingleOrDefaultAsync(m => m.PersonId == id);
+            var people = await _context.People
+                .AsNoTracking()
+                .SingleOrDefaultAsync(m => m.PersonId == id);
             if (people == null)
             {
                 return NotFound();
@@ -157,7 +159,24 @@ namespace ex1a.Controllers
             if (await TryUpdateModelAsync<People>(
                 people,
                 "",
-                s => s.FullName, s => s.PreferredName, s => s.LogonName, s => s.UserPreferences, s => s.PhoneNumber, s => s.FaxNumber, s => s.EMailAddress, s => s.CustomFields))
+                s => s.FullName,
+                s => s.PreferredName,
+                s => s.IsPermittedToLogon,
+                s => s.LogonName,
+                s => s.IsExternalLogonProvider,
+                s => s.HashedPassword,
+                s => s.IsSystemUser,
+                s => s.IsEmployee,
+                s => s.IsSalesperson,
+                s => s.UserPreferences, 
+                s => s.PhoneNumber, 
+                s => s.FaxNumber, 
+                s => s.EMailAddress, 
+                s => s.Photo,
+                s => s.CustomFields,
+                s => s.LastEditedBy,
+                s => s.ValidFrom,
+                s => s.ValidTo))
             {
                 try
                 {
@@ -186,9 +205,33 @@ namespace ex1a.Controllers
                         {
                             ModelState.AddModelError("PreferredName", $"Current value: {databaseValues.PreferredName:c}");
                         }
+                        if (databaseValues.IsPermittedToLogon != clientValues.IsPermittedToLogon)
+                        {
+                            ModelState.AddModelError("IsPermittedToLogon", $"Current value: {databaseValues.IsPermittedToLogon:c}");
+                        }
                         if (databaseValues.LogonName != clientValues.LogonName)
                         {
                             ModelState.AddModelError("LogonName", $"Current value: {databaseValues.LogonName:d}");
+                        }
+                        if (databaseValues.IsExternalLogonProvider != clientValues.IsExternalLogonProvider)
+                        {
+                            ModelState.AddModelError("IsExternalLogonProvider", $"Current value: {databaseValues.IsExternalLogonProvider:c}");
+                        }
+                        if (databaseValues.HashedPassword != clientValues.HashedPassword)
+                        {
+                            ModelState.AddModelError("HashedPassword", $"Current value: {databaseValues.HashedPassword:c}");
+                        }
+                        if (databaseValues.IsSystemUser != clientValues.IsSystemUser)
+                        {
+                            ModelState.AddModelError("IsSystemUser", $"Current value: {databaseValues.IsSystemUser:c}");
+                        }
+                        if (databaseValues.IsEmployee != clientValues.IsEmployee)
+                        {
+                            ModelState.AddModelError("IsEmployee", $"Current value: {databaseValues.IsEmployee:c}");
+                        }
+                        if (databaseValues.IsSalesperson != clientValues.IsSalesperson)
+                        {
+                            ModelState.AddModelError("IsSalesperson", $"Current value: {databaseValues.IsSalesperson:c}");
                         }
                         if (databaseValues.UserPreferences != clientValues.UserPreferences)
                         {
@@ -206,13 +249,26 @@ namespace ex1a.Controllers
                         {
                             ModelState.AddModelError("EMailAddress", $"Current value: {databaseValues.EMailAddress:d}");
                         }
+                        if (databaseValues.Photo != clientValues.Photo)
+                        {
+                            ModelState.AddModelError("Photo", $"Current value: {databaseValues.Photo:d}");
+                        }
                         if (databaseValues.CustomFields != clientValues.CustomFields)
                         {
                             ModelState.AddModelError("CustomeFields", $"Current value: {databaseValues.CustomFields:d}");
                         }
-
-
-
+                        if (databaseValues.LastEditedBy != clientValues.LastEditedBy)
+                        {
+                            ModelState.AddModelError("LastEditedBy", $"Current value: {databaseValues.LastEditedBy:d}");
+                        }
+                        if (databaseValues.ValidFrom != clientValues.ValidFrom)
+                        {
+                            ModelState.AddModelError("ValidFrom", $"Current value: {databaseValues.ValidFrom:d}");
+                        }
+                        if (databaseValues.ValidTo != clientValues.ValidTo)
+                        {
+                            ModelState.AddModelError("ValidTo", $"Current value: {databaseValues.ValidTo:d}");
+                        }
 
                         ModelState.AddModelError(string.Empty, "The record you attempted to edit "
                                 + "was modified by another user after you got the original value. The "

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using Microsoft.EntityFrameworkCore;
-using ex1a.Models;
-using ex1a.Models.StatisticsViewModels;
+using ex1c.Models;
+using ex1c.Models.StatisticsViewModels;
 
-namespace ex1a.Data
+namespace ex1c.Data
 {
     public class WideWorldContext : DbContext
     {
@@ -198,3 +198,4 @@ namespace ex1a.Data
 
     }
 }
+

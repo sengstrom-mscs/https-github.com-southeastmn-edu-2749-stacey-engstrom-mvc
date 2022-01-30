@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoUniversity", "Contos
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WideWorldImporters", "WideWorldImporters\WideWorldImporters.csproj", "{208D6405-5DE3-43A4-A2EC-3C76F0177930}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApi", "TodoApi\TodoApi.csproj", "{3F6544F9-1E39-4C9E-88F2-483F68083EC0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex1c", "ex1c\ex1c.csproj", "{D1536E8D-8987-4825-B193-793FFE80EA56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{208D6405-5DE3-43A4-A2EC-3C76F0177930}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{208D6405-5DE3-43A4-A2EC-3C76F0177930}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{208D6405-5DE3-43A4-A2EC-3C76F0177930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F6544F9-1E39-4C9E-88F2-483F68083EC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F6544F9-1E39-4C9E-88F2-483F68083EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F6544F9-1E39-4C9E-88F2-483F68083EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F6544F9-1E39-4C9E-88F2-483F68083EC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1536E8D-8987-4825-B193-793FFE80EA56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1536E8D-8987-4825-B193-793FFE80EA56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1536E8D-8987-4825-B193-793FFE80EA56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1536E8D-8987-4825-B193-793FFE80EA56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
